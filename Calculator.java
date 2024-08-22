@@ -1,56 +1,34 @@
-import java.util.Scanner;
+// Java program to find the perimeter of a Rectangle
+
+import java.io.*;
 
 class Calculator {
-  public static void main(String[] args) {
 
-    char operator;
-    Double number1, number2, result;
+	// Method to calculate the perimeter of the rectangle
+	// with given length and breadth
+	static void perimeter(int length, int breadth)
+	{
+		// Calculate the 'perimeter' using the formula
+		int perimeter = 2 * (length + breadth);
+	
+		System.out.println("The perimeter of the given rectangle of length "
+			+ length + " and breadth " + breadth + " = "
+			+ perimeter);
+	}
 
-    // create an object of Scanner class
-    Scanner input = new Scanner(System.in);
-
-    // ask users to enter operator
-    System.out.println("Choose an operator: +, -, *, or /");
-    operator = input.next().charAt(0);
-
-    // ask users to enter numbers
-    System.out.println("Enter first number");
-    number1 = input.nextDouble();
-
-    System.out.println("Enter second number");
-    number2 = input.nextDouble();
-
-    switch (operator) {
-
-      // performs addition between numbers
-      case '+':
-        result = number1 + number2;
-        System.out.println(number1 + " + " + number2 + " = " + result);
-        break;
-
-      // performs subtraction between numbers
-      case '-':
-        result = number1 - number2;
-        System.out.println(number1 + " - " + number2 + " = " + result);
-        break;
-
-      // performs multiplication between numbers
-      case '*':
-        result = number1 * number2;
-        System.out.println(number1 + " * " + number2 + " = " + result);
-        break;
-
-      // performs division between numbers
-      case '/':
-        result = number1 / number2;
-        System.out.println(number1 + " / " + number2 + " = " + result);
-        break;
-
-      default:
-        System.out.println("Invalid operator!");
-        break;
-    }
-
-    input.close();
-  }
+	// Driver method
+	public static void main(String[] args)
+	{
+		// Initialize a variable length that stores length of
+		// the given rectangle
+		int length = 10;
+	
+		// Initialize a variable breadth that stores breadth
+		// of the given rectangle
+		int breadth = 20;
+	
+		// Call the perimeter method on these length and
+		// breadth
+		perimeter(length, breadth);
+	}
 }
